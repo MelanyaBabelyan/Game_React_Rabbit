@@ -78,7 +78,6 @@ const StartNewGame = () => {
             {globalObject.directionButtons.map((direction) => {
               return (
                 <button
-                  id={direction}
                   className={direction}
                   key={direction}
                   onClick={() => {
