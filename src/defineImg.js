@@ -1,6 +1,6 @@
 import globalObject from "./globals"
 
-function Image(props) {
+const Image = (props) => {
   if (props.character === globalObject.RABBIT) {
     const image = globalObject.IMAGES.RABBIT
     return <img src={image} alt="#" />

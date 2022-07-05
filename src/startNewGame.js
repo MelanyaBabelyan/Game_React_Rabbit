@@ -5,7 +5,7 @@ import eventKeysFunctions from "./events"
 import Image from "./defineImg"
 import DisplayOfTheFinal from "./final"
 
-function StartNewGame() {
+const StartNewGame = () => {
   const optionsArray = [5, 7, 10]
   const [value, setValue] = useState(optionsArray[0])
 
@@ -22,7 +22,7 @@ function StartNewGame() {
   }
   let [isActive, setIsActive] = useState(false)
 
-  function newGamState() {
+  const newGamState = () => {
     setGameState({
       gameMatrix: createMatrixWithAllCharacters(value),
       gameOver: false,
@@ -31,7 +31,7 @@ function StartNewGame() {
     setIsActive(true)
   }
 
-  function drawAfterMoving(direction) {
+  const drawAfterMoving = (direction) => {
     if (gameState.gameOver === true) {
       return
     }

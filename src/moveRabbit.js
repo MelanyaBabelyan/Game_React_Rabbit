@@ -1,7 +1,7 @@
 import globalObject from "./globals"
 import changeGameStatus from "./gameStatus"
 
-function rabbitGoTo(gameState, rabbitIndex, x, y) {
+const rabbitGoTo = (gameState, rabbitIndex, x, y) => {
   const [i, j] = rabbitIndex
   const matrix = gameState.gameMatrix
   console.log(gameState)

@@ -4,7 +4,7 @@ import findCordinateCharacter from "./findCordinateCharacter"
 import changeGameStatus from "./gameStatus"
 import minStepcordinate from "./minStep"
 
-function moveWolves(gameState, rabbitIndex) {
+const moveWolves = (gameState, rabbitIndex) => {
   const array = gameState.gameMatrix
   const wolfsIndex = findCordinateCharacter(
     gameState.gameMatrix,

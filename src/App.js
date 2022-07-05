@@ -2,7 +2,7 @@ import "./App.css"
 import { useState } from "react"
 import StartNewGame from "./startNewGame"
 
-function App() {
+const App = () => {
   const [gameBoardNumber, setGamboardNumber] = useState([])
   function clickButton() {
     setGamboardNumber([...gameBoardNumber, gameBoardNumber.length + 1])

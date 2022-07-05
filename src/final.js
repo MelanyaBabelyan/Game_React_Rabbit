@@ -1,5 +1,4 @@
-import App from "./App"
-function DisplayOfTheFinal(props) {
+const DisplayOfTheFinal = (props) => {
   console.log(props)
 
   if (props.result === "win") {
@@ -17,7 +16,7 @@ function DisplayOfTheFinal(props) {
         <img src="./img/final.jpg" alt="" />
       </div>
     )
-    }
+  }
 }
 
 export default DisplayOfTheFinal

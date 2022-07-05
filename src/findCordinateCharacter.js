@@ -1,4 +1,4 @@
-function findCordinateCharacter(array, character) {
+const findCordinateCharacter = (array, character) => {
   const findeMtrix = function (accumulator, row, x) {
     row.forEach((cell, y) => {
       if (cell === character) {

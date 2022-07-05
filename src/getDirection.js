@@ -1,4 +1,4 @@
-function getDirectionCoord(gameMatrix, rabbitIndex, eventKey) {
+const getDirectionCoord = (gameMatrix, rabbitIndex, eventKey) => {
   let [x, y] = rabbitIndex
   let newX = x
   let newY = y

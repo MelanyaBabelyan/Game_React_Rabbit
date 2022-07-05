@@ -5,7 +5,7 @@ import getDirectionCoord from "./getDirection"
 import rabbitGoTo from "./moveRabbit"
 import displayOfTheFinal from "./final"
 
-function eventKeysFunctions(gameState, eventKey) {
+const eventKeysFunctions = (gameState, eventKey) => {
   const newGameState = { ...gameState }
   console.log(eventKey)
 
@@ -32,4 +32,5 @@ function eventKeysFunctions(gameState, eventKey) {
   }
   return newGameState
 }
+
 export default eventKeysFunctions
