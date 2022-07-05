@@ -108,16 +108,13 @@ button {
 .message {
   height: 500px;
   width: 500px;
-  /* background-color: #7bb6a5 0, 19; */
-  color: #111;
-  font-size: large;
-  font-size: 40px;
-  /* text-align: center; */
+  color: rgb(4, 137, 144);
+  font-size: 60px;
 }
-.messmessage ige img {
-  height: 300px;
-  width: 300px;
+
+.message img {
+  height: 350px;
+  width: 350px;
   display: block;
   margin: 0 auto;
 }
-

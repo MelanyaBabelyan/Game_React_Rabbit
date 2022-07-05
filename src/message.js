@@ -5,7 +5,7 @@ const DisplayOfTheFinalMessage = (props) => {
     return (
       <div className="message">
         Congratulations! You Won!
-        <img src="./img/Screenshot_3.png" alt="" />
+        <img src="./img/rabbit__.png" alt="" />
       </div>
     )
   }
