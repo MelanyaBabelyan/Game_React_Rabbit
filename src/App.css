@@ -2,37 +2,124 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 30%;
+  height: 50%;
+  margin: 50px auto;
+  /* background-color: #dfffef; */
+  background-image: url(img/78812fd262025d24e53452a1307bbb6d.png);
+  /* text-align: center; */
+  display: block;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  width: 150px;
+  padding: 10px;
+  background: teal;
   color: white;
+  border-radius: 25px;
+  margin: 0 20px;
+  cursor: pointer;
+  margin: 45px;
+}
+.select {
+  background: transparent;
+  width: 150px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  margin: 50px;
+  width: 120px;
+  height: 34px;
+  border: 1px solid #111;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.box {
+  display: flex;
+  background-color: #50949190;
+  width: 80px;
+  height: 80px;
+  margin: 3px;
+}
+.newGameArea {
+  /* margin: 10 auto;
+  margin-top: 50px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 25px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.right {
+  width: 120px;
+  margin: 0 20px;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left {
+  width: 120px;
+  margin: 0 20px;
+  border: none;
 }
+
+.up {
+  width: 200px;
+  margin: 7px auto;
+  border: none;
+}
+
+.down {
+  width: 200px;
+  margin: 7px auto;
+  border: none;
+}
+.btnEvent {
+  width: 350px;
+  margin: 20px auto;
+  text-align: center;
+}
+/* #newBoard {
+  display: block;
+} */
+#container {
+  width: 100%;
+  /* margin: 20px auto; */
+  text-align: center;
+}
+.NewBoard {
+  width: 150px;
+  padding: 10px;
+  background: #f5ffff;
+  color: rgb(0, 0, 0);
+}
+
+.messige {
+  height: 500px;
+  width: 500px;
+  /* background-color: #7bb6a5 0, 19; */
+  color: #111;
+  font-size: large;
+  font-size: 40px;
+  /* text-align: center; */
+}
+.messige img {
+  height: 300px;
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+/* .messige button {
+  margin-bottom: 100%;
+} */
