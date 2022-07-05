@@ -20,7 +20,6 @@ const StartNewGame = () => {
   const styleObject = {
     width: gameArray.length * 80 + 100 + "px",
   }
-  let [isActive, setIsActive] = useState(false)
 
   const newGamState = () => {
     setGameState({
@@ -28,7 +27,6 @@ const StartNewGame = () => {
       gameOver: false,
       gameResult: "",
     })
-    setIsActive(true)
   }
 
   const drawAfterMoving = (direction) => {
@@ -57,7 +55,7 @@ const StartNewGame = () => {
 
       <div id="newGameArea" className="newGameArea" style={styleObject}>
         {gameState.gameOver
-          ? ((isActive = false),
+          ? (gameArray.length === 0,
             (
               <div>
                 <DisplayOfTheFinalMessage result={gameState.gameResult} />
@@ -75,7 +73,7 @@ const StartNewGame = () => {
                 )
               })
             })}
-        {isActive ? (
+        {gameState.gameOver === false && gameArray.length > 0 ? (
           <div id="btnEvent" className="btnEvent">
             {globalObject.directionButtons.map((direction) => {
               return (
