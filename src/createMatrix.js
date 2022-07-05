@@ -7,7 +7,7 @@ const createMatrixWithAllCharacters = (gameBoardSize) => {
   return matrix
 }
 
-function CreateMatrix(value) {
+const CreateMatrix=(value)=> {
   let arr = []
   for (let i = 0; i < value; i++) {
     arr[i] = []

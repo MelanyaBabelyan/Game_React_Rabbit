@@ -3,7 +3,7 @@ import createMatrixWithAllCharacters from "./createMatrix"
 import globalObject from "./globals"
 import eventKeysFunctions from "./events"
 import Image from "./defineImg"
-import DisplayOfTheFinal from "./final"
+import DisplayOfTheFinalMessage from "./message"
 
 const StartNewGame = () => {
   const optionsArray = [5, 7, 10]
@@ -60,7 +60,7 @@ const StartNewGame = () => {
           ? ((isActive = false),
             (
               <div>
-                <DisplayOfTheFinal result={gameState.gameResult} />
+                <DisplayOfTheFinalMessage result={gameState.gameResult} />
                 <button id="start" className="start" onClick={newGamState}>
                   PLAY AGEIN
                 </button>

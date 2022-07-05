@@ -1,9 +1,9 @@
-const DisplayOfTheFinal = (props) => {
+const DisplayOfTheFinalMessage = (props) => {
   console.log(props)
 
   if (props.result === "win") {
     return (
-      <div className="messige">
+      <div className="message">
         Congratulations! You Won!
         <img src="./img/Screenshot_3.png" alt="" />
       </div>
@@ -11,7 +11,7 @@ const DisplayOfTheFinal = (props) => {
   }
   if (props.result === "gameOver") {
     return (
-      <div className="messige">
+      <div className="message">
         Game over
         <img src="./img/final.jpg" alt="" />
       </div>
@@ -19,4 +19,4 @@ const DisplayOfTheFinal = (props) => {
   }
 }
 
-export default DisplayOfTheFinal
+export default DisplayOfTheFinalMessage

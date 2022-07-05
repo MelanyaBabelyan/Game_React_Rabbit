@@ -105,7 +105,7 @@ button {
   color: rgb(0, 0, 0);
 }
 
-.messige {
+.message {
   height: 500px;
   width: 500px;
   /* background-color: #7bb6a5 0, 19; */
@@ -114,12 +114,10 @@ button {
   font-size: 40px;
   /* text-align: center; */
 }
-.messige img {
+.messmessage ige img {
   height: 300px;
   width: 300px;
   display: block;
   margin: 0 auto;
 }
-/* .messige button {
-  margin-bottom: 100%;
-} */
+

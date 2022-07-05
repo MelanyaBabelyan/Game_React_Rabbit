@@ -3,7 +3,7 @@ import moveWolves from "./moveWolves"
 import globalObject from "./globals"
 import getDirectionCoord from "./getDirection"
 import rabbitGoTo from "./moveRabbit"
-import displayOfTheFinal from "./final"
+import DisplayOfTheFinalMessage from "./message"
 
 const eventKeysFunctions = (gameState, eventKey) => {
   const newGameState = { ...gameState }
@@ -22,12 +22,12 @@ const eventKeysFunctions = (gameState, eventKey) => {
   rabbitGoTo(newGameState, rabbitIndex, newX, newY)
 
   if (newGameState.gameOver) {
-    displayOfTheFinal(newGameState)
+    DisplayOfTheFinalMessage(newGameState)
     return newGameState
   }
   moveWolves(newGameState, rabbitIndex)
   if (newGameState.gameOver) {
-    displayOfTheFinal(newGameState)
+    DisplayOfTheFinalMessage(newGameState)
     return newGameState
   }
   return newGameState
