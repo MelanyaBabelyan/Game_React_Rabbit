@@ -4,7 +4,7 @@ import StartNewGame from "./startNewGame"
 
 const App = () => {
   const [gameBoardNumber, setGamboardNumber] = useState([])
-  function clickButton() {
+  const clickButton=() =>{
     setGamboardNumber([...gameBoardNumber, gameBoardNumber.length + 1])
   }
   return (

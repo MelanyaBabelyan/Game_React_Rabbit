@@ -2,7 +2,7 @@ import globalObject from "./globals"
 
 const findTheStepNearTheRabbit = (gameState, index) => {
   const array = gameState.gameMatrix
-  function isLegitim(cell) {
+  const isLegitim=(cell) =>{
     const legitimCells = [globalObject.FREE_CELL, globalObject.RABBIT]
 
     return legitimCells.includes(
