@@ -2,7 +2,7 @@ import globalObject from "./globals"
 import findTheStepNearTheRabbit from "./findCordinateNearRabbit"
 import findCordinateCharacter from "./findCordinateCharacter"
 import changeGameStatus from "./gameStatus"
-import minStepcordinate from "./minStep"
+import distance from "./distance"
 
 const moveWolves = (gameState, rabbitIndex) => {
   const array = gameState.gameMatrix
@@ -25,7 +25,7 @@ const moveWolves = (gameState, rabbitIndex) => {
           return
         }
       })
-      const distances = steps.map((step) => minStepcordinate(rabbitIndex, step))
+      const distances = steps.map((step) => distance(rabbitIndex, step))
       const index = distances.indexOf(Math.min(...distances))
       const nearPoint = steps[index]
       if (nearPoint === globalObject.RABBIT) {

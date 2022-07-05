@@ -14,7 +14,7 @@ const globalObject = {
   Y: 1,
 
   directionButtons: ["up", "left", "right", "down"],
-
+  optionsArray: [5, 7, 10],
   IMAGES,
 }
 

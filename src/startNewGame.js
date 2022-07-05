@@ -6,16 +6,17 @@ import Image from "./defineImg"
 import DisplayOfTheFinalMessage from "./message"
 
 const StartNewGame = () => {
-  const optionsArray = [5, 7, 10]
-  const [value, setValue] = useState(optionsArray[0])
+  const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
 
+  console.log(typeof boardSize)
   const [gameState, setGameState] = useState({
     gameMatrix: [],
     gameOver: false,
     gameStatus: "",
   })
 
-  const changeValue = (event) => setValue(event.target.value)
+  const changeBoardSize = (event) => SetboardSize(parseInt(event.target.value))
+
   const gameArray = gameState.gameMatrix
   const styleObject = {
     width: gameArray.length * 80 + 100 + "px",
@@ -23,13 +24,13 @@ const StartNewGame = () => {
 
   const newGamState = () => {
     setGameState({
-      gameMatrix: createMatrixWithAllCharacters(value),
+      gameMatrix: createMatrixWithAllCharacters(boardSize),
       gameOver: false,
       gameResult: "",
     })
   }
 
-  const drawAfterMoving = (direction) => {
+  const onMove = (direction) => {
     if (gameState.gameOver === true) {
       return
     }
@@ -37,62 +38,79 @@ const StartNewGame = () => {
     setGameState(newGameState)
   }
 
+  const isGameInProcess = gameState.gameOver === false && gameArray.length > 0
+
   return (
     <div>
-      <button id="start" className="start" onClick={newGamState}>
+      <button className="start" onClick={newGamState}>
         Start
       </button>
-
-      <select className="select" id="select" onChange={changeValue}>
-        {optionsArray.map((option) => {
-          return (
-            <option key={option} value={option}>
-              {option}X{option}
-            </option>
-          )
-        })}
-      </select>
-
+      <OptionsDropDown onChange={changeBoardSize} />
       <div id="newGameArea" className="newGameArea" style={styleObject}>
-        {gameState.gameOver
-          ? (gameArray.length === 0,
-            (
-              <div>
-                <DisplayOfTheFinalMessage result={gameState.gameResult} />
-                <button id="start" className="start" onClick={newGamState}>
-                  PLAY AGEIN
-                </button>
-              </div>
-            ))
-          : gameArray.map((row, x) => {
-              return row.map((column, y) => {
-                return (
-                  <div className="box" key={x.toString() + y.toString()}>
-                    <Image character={column} />
-                  </div>
-                )
-              })
-            })}
-        {gameState.gameOver === false && gameArray.length > 0 ? (
-          <div id="btnEvent" className="btnEvent">
-            {globalObject.directionButtons.map((direction) => {
-              return (
-                <button
-                  className={direction}
-                  key={direction}
-                  onClick={() => {
-                    drawAfterMoving(direction)
-                  }}
-                >
-                  {direction}
-                </button>
-              )
-            })}
-          </div>
-        ) : (
-          false
+        {isGameInProcess && <GameBoard gameArray={gameArray} />}
+        {isGameInProcess && <ControlButtons onMove={onMove} />}
+        {gameState.gameOver && gameArray.length > 0 && (
+          <NewGameButton
+            gameResult={gameState.gameResult}
+            onNewGame={newGamState}
+          />
         )}
       </div>
+    </div>
+  )
+}
+
+const OptionsDropDown = ({ onChange }) => {
+  return (
+    <select className="select" onChange={onChange}>
+      {globalObject.optionsArray.map((option) => {
+        return (
+          <option key={option} value={option}>
+            {option}X{option}
+          </option>
+        )
+      })}
+    </select>
+  )
+}
+
+const GameBoard = ({ gameArray }) => {
+  return gameArray.map((row, x) => {
+    return row.map((column, y) => {
+      return (
+        <div className="box" key={x.toString() + y.toString()}>
+          <Image character={column} />
+        </div>
+      )
+    })
+  })
+}
+
+const ControlButtons = ({ onMove }) => {
+  return (
+    <div id="btnEvent" className="btnEvent">
+      {globalObject.directionButtons.map((direction) => {
+        return (
+          <button
+            className={direction}
+            key={direction}
+            onClick={() => onMove(direction)}
+          >
+            {direction}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+const NewGameButton = ({ gameResult, onNewGame }) => {
+  return (
+    <div>
+      <DisplayOfTheFinalMessage result={gameResult} />
+      <button id="start" className="start" onClick={onNewGame}>
+        PLAY AGAIN
+      </button>
     </div>
   )
 }
