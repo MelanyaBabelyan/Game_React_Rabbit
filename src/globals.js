@@ -1,12 +1,3 @@
-// const FREE_CELL = 0
-// const RABBIT = "Rabbit"
-// const WOLF = "Wolf"
-// const FENCE = "Fence"
-// const HOME = "Home"
-
-// const X = 0
-// const Y = 1
-// const directionButtons = ["up", "left", "right", "down"]
 const IMAGES = {
   RABBIT: "img/rabbit.gif",
   WOLF: "img/gamewolf.png",

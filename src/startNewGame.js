@@ -4,20 +4,24 @@ import globalObject from "./globals"
 import eventKeysFunctions from "./events"
 import Image from "./defineImg"
 import DisplayOfTheFinal from "./final"
+
 function StartNewGame() {
   const optionsArray = [5, 7, 10]
   const [value, setValue] = useState(optionsArray[0])
+
   const [gameState, setGameState] = useState({
     gameMatrix: [],
     gameOver: false,
     gameStatus: "",
   })
-  const changeValue = (event) => setValue(event.target.value)
-  const styleObject = {
-    width: gameState.gameMatrix.length * 80 + 100 + "px",
-  }
 
+  const changeValue = (event) => setValue(event.target.value)
+  const gameArray = gameState.gameMatrix
+  const styleObject = {
+    width: gameArray.length * 80 + 100 + "px",
+  }
   let [isActive, setIsActive] = useState(false)
+
   function newGamState() {
     setGameState({
       gameMatrix: createMatrixWithAllCharacters(value),
@@ -34,8 +38,6 @@ function StartNewGame() {
     const newGameState = eventKeysFunctions(gameState, direction)
     setGameState(newGameState)
   }
-
-  const gameArray = gameState.gameMatrix
 
   return (
     <div>

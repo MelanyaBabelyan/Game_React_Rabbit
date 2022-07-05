@@ -4,6 +4,7 @@ import globalObject from "./globals"
 import getDirectionCoord from "./getDirection"
 import rabbitGoTo from "./moveRabbit"
 import displayOfTheFinal from "./final"
+
 function eventKeysFunctions(gameState, eventKey) {
   const newGameState = { ...gameState }
   console.log(eventKey)

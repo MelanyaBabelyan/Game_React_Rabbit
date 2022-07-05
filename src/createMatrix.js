@@ -1,4 +1,5 @@
 import globalObject from "./globals"
+
 function createMatrixWithAllCharacters(gameBoardSize) {
   const matrix = CreateMatrix(gameBoardSize)
   defineAtributes(matrix, gameBoardSize)
@@ -41,4 +42,5 @@ function DefineRandomPosition(matrix, character) {
     DefineRandomPosition(matrix, character)
   }
 }
+
 export default createMatrixWithAllCharacters
