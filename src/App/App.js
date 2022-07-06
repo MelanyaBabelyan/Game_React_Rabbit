@@ -1,21 +1,19 @@
 import "./App.css"
 import { useState } from "react"
-import StartNewGame from "./startNewGame"
-
+import GameWrapper from "../GameWrapper/GameWrapper"
+import * as Styled from "./styleApp"
 const App = () => {
   const [gameBoardNumber, setGamboardNumber] = useState([])
   const clickButton = () => {
     setGamboardNumber([...gameBoardNumber, gameBoardNumber.length + 1])
   }
   return (
-    <div className="App">
+    <Styled.App>
       {gameBoardNumber.map((number) => {
-        return <StartNewGame key={number} />
+        return <GameWrapper key={number} />
       })}
-      <button id="newBoardButton" onClick={clickButton}>
-        New Board
-      </button>
-    </div>
+      <Styled.Button onClick={clickButton}>New Board</Styled.Button>
+    </Styled.App>
   )
 }
 

@@ -1,8 +1,8 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
 }
@@ -10,14 +10,12 @@ body {
   width: 30%;
   height: 50%;
   margin: 50px auto;
-  /* background-color: #dfffef; */
   background-image: url(img/78812fd262025d24e53452a1307bbb6d.png);
-  /* text-align: center; */
   display: block;
   text-align: center;
-}
+} */
 
-button {
+/* button {
   width: 150px;
   padding: 10px;
   background: teal;
@@ -26,8 +24,8 @@ button {
   margin: 0 20px;
   cursor: pointer;
   margin: 45px;
-}
-.select {
+} */
+/* .select {
   background: transparent;
   width: 150px;
   font-size: 16px;
@@ -39,18 +37,18 @@ button {
   border: 1px solid #111;
   border-radius: 3px;
   overflow: hidden;
-}
-.box {
+} */
+/* .box {
   display: flex;
   background-color: #50949190;
   width: 80px;
   height: 80px;
   margin: 3px;
-}
-.newGameArea {
-  /* margin: 10 auto;
+} */
+/* .newGameArea { */
+/* margin: 10 auto;
   margin-top: 50px; */
-  display: flex;
+/* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 25px;
@@ -60,9 +58,9 @@ button {
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-}
+} */
 
-.right {
+/* .right {
   width: 120px;
   margin: 0 20px;
   border: none;
@@ -84,28 +82,28 @@ button {
   width: 200px;
   margin: 7px auto;
   border: none;
-}
-.btnEvent {
+} */
+/* .btnEvent {
   width: 350px;
   margin: 20px auto;
   text-align: center;
-}
+} */
 /* #newBoard {
   display: block;
 } */
-#container {
+
+/* #container {
   width: 100%;
-  /* margin: 20px auto; */
   text-align: center;
-}
-.NewBoard {
+} */
+/* .NewBoard {
   width: 150px;
   padding: 10px;
   background: #f5ffff;
   color: rgb(0, 0, 0);
-}
+} */
 
-.message {
+/* .message {
   height: 500px;
   width: 500px;
   color: rgb(4, 137, 144);
@@ -117,4 +115,4 @@ button {
   width: 350px;
   display: block;
   margin: 0 auto;
-}
+} */

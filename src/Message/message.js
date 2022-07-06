@@ -1,20 +1,22 @@
+import * as Styled from "./styleMessage"
+import { Message, MessageImg } from "./styleMessage"
 const DisplayOfTheFinalMessage = (props) => {
   console.log(props)
 
   if (props.result === "win") {
     return (
-      <div className="message">
+      <Message>
         Congratulations! You Won!
-        <img src="./img/rabbit__.png" alt="" />
-      </div>
+        <MessageImg src="./img/rabbit__.png" alt="" />
+      </Message>
     )
   }
   if (props.result === "gameOver") {
     return (
-      <div className="message">
+      <Message>
         Game over
-        <img src="./img/final.jpg" alt="" />
-      </div>
+        <MessageImg src="./img/final.jpg" alt="" />
+      </Message>
     )
   }
 }

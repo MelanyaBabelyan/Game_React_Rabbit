@@ -1,4 +1,4 @@
-import globalObject from "./globals"
+import globalObject from "../GameWrapper/globals"
 
 const createMatrixWithAllCharacters = (gameBoardSize) => {
   const matrix = CreateMatrix(gameBoardSize)
@@ -7,20 +7,20 @@ const createMatrixWithAllCharacters = (gameBoardSize) => {
   return matrix
 }
 
-const CreateMatrix=(value)=> {
+const CreateMatrix=(gameBoardSize)=> {
   let arr = []
-  for (let i = 0; i < value; i++) {
+  for (let i = 0; i < gameBoardSize; i++) {
     arr[i] = []
-    for (let j = 0; j < value; j++) {
+    for (let j = 0; j < gameBoardSize; j++) {
       arr[i][j] = globalObject.FREE_CELL
     }
   }
   return arr
 }
 
-const defineAtributes = (matrix, value) => {
-  const wolfCount = Math.ceil((60 * value) / 100)
-  const fenceCount = Math.round((40 * value) / 100)
+const defineAtributes = (matrix, gameBoardSize) => {
+  const wolfCount = Math.ceil((60 * gameBoardSize) / 100)
+  const fenceCount = Math.round((40 * gameBoardSize) / 100)
   DefineCharacter(matrix, 1, globalObject.RABBIT)
   DefineCharacter(matrix, 1, globalObject.HOME)
   DefineCharacter(matrix, wolfCount, globalObject.WOLF)

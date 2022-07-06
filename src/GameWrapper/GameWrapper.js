@@ -1,11 +1,12 @@
 import { useState } from "react"
-import createMatrixWithAllCharacters from "./createMatrix"
+import createMatrixWithAllCharacters from "../createMatrix/createMatrix"
 import globalObject from "./globals"
-import eventKeysFunctions from "./events"
-import Image from "./defineImg"
-import DisplayOfTheFinalMessage from "./message"
+import eventKeysFunctions from "../Move/events"
+import Image from "../GameWrapper/defineImg"
+import DisplayOfTheFinalMessage from "../Message/message"
+import * as Styled from "./stylesheet "
 
-const StartNewGame = () => {
+const GameWrapper = () => {
   const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
 
   console.log(typeof boardSize)
@@ -42,11 +43,9 @@ const StartNewGame = () => {
 
   return (
     <div>
-      <button className="start" onClick={newGamState}>
-        Start
-      </button>
+      <Styled.Button onClick={newGamState}>Start</Styled.Button>
       <OptionsDropDown onChange={changeBoardSize} />
-      <div id="newGameArea" className="newGameArea" style={styleObject}>
+      <Styled.NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
         {isGameInProcess && <ControlButtons onMove={onMove} />}
         {gameState.gameOver && gameArray.length > 0 && (
@@ -55,14 +54,14 @@ const StartNewGame = () => {
             onNewGame={newGamState}
           />
         )}
-      </div>
+      </Styled.NewGameArea>
     </div>
   )
 }
 
 const OptionsDropDown = ({ onChange }) => {
   return (
-    <select className="select" onChange={onChange}>
+    <Styled.Select onChange={onChange}>
       {globalObject.optionsArray.map((option) => {
         return (
           <option key={option} value={option}>
@@ -70,7 +69,7 @@ const OptionsDropDown = ({ onChange }) => {
           </option>
         )
       })}
-    </select>
+    </Styled.Select>
   )
 }
 
@@ -78,9 +77,9 @@ const GameBoard = ({ gameArray }) => {
   return gameArray.map((row, x) => {
     return row.map((column, y) => {
       return (
-        <div className="box" key={x.toString() + y.toString()}>
+        <Styled.Box key={x.toString() + y.toString()}>
           <Image character={column} />
-        </div>
+        </Styled.Box>
       )
     })
   })
@@ -88,19 +87,19 @@ const GameBoard = ({ gameArray }) => {
 
 const ControlButtons = ({ onMove }) => {
   return (
-    <div id="btnEvent" className="btnEvent">
+    <Styled.BtnEvent>
       {globalObject.directionButtons.map((direction) => {
         return (
-          <button
-            className={direction}
+          <Styled.directionButtons
+            direction={direction}
             key={direction}
             onClick={() => onMove(direction)}
           >
             {direction}
-          </button>
+          </Styled.directionButtons>
         )
       })}
-    </div>
+    </Styled.BtnEvent>
   )
 }
 
@@ -108,11 +107,9 @@ const NewGameButton = ({ gameResult, onNewGame }) => {
   return (
     <div>
       <DisplayOfTheFinalMessage result={gameResult} />
-      <button id="start" className="start" onClick={onNewGame}>
-        PLAY AGAIN
-      </button>
+      <Styled.Button onClick={onNewGame}>PLAY AGAIN</Styled.Button>
     </div>
   )
 }
 
-export default StartNewGame
+export default GameWrapper

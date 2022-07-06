@@ -1,7 +1,9 @@
 import globalObject from "./globals"
 
 const Image = (props) => {
+  let aaa=null
   if (props.character === globalObject.RABBIT) {
+    let aaa
     return <img src={globalObject.IMAGES.RABBIT} alt="Rabbit" />
   }
   if (props.character === globalObject.WOLF) {
