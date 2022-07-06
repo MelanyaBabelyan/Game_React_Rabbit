@@ -9,7 +9,6 @@ import * as Styled from "./stylesheet "
 const GameWrapper = () => {
   const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
 
-  console.log(typeof boardSize)
   const [gameState, setGameState] = useState({
     gameMatrix: [],
     gameOver: false,

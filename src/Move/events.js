@@ -7,8 +7,6 @@ import DisplayOfTheFinalMessage from "../Message/message"
 
 const eventKeysFunctions = (gameState, eventKey) => {
   const newGameState = { ...gameState }
-  console.log(eventKey)
-
   const rabbitIndex = findCordinateCharacter(
     newGameState.gameMatrix,
     globalObject.RABBIT

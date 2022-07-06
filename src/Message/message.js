@@ -1,8 +1,7 @@
 import * as Styled from "./styleMessage"
 import { Message, MessageImg } from "./styleMessage"
-const DisplayOfTheFinalMessage = (props) => {
-  console.log(props)
 
+const DisplayOfTheFinalMessage = (props) => {
   if (props.result === "win") {
     return (
       <Message>

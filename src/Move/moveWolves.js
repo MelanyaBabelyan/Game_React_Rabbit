@@ -20,7 +20,6 @@ const moveWolves = (gameState, rabbitIndex) => {
     if (steps.length > 0) {
       steps.forEach((step) => {
         if (array[step[0]][step[1]] === globalObject.RABBIT) {
-          console.log("hi")
           changeGameStatus(gameState, "gameOver")
           return
         }

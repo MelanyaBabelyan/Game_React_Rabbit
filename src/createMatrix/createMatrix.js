@@ -3,11 +3,10 @@ import globalObject from "../GameWrapper/globals"
 const createMatrixWithAllCharacters = (gameBoardSize) => {
   const matrix = CreateMatrix(gameBoardSize)
   defineAtributes(matrix, gameBoardSize)
-  console.log(matrix)
   return matrix
 }
 
-const CreateMatrix=(gameBoardSize)=> {
+const CreateMatrix = (gameBoardSize) => {
   let arr = []
   for (let i = 0; i < gameBoardSize; i++) {
     arr[i] = []
